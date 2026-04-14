@@ -6,6 +6,14 @@ U.S. Influenza-Like Illness (ILI) activity using CDC FluView surveillance
 data spanning 1997 to 2026. Three model families are compared: Seasonal 
 ARIMA, STL + ETS, and STL + ARIMA.
 
+## Background and Motivation
+Influenza affects millions of Americans annually, straining healthcare 
+systems and causing significant economic losses. Accurate forecasting of 
+ILI activity allows public health officials to allocate resources, time 
+vaccination campaigns, and issue early warnings. This project demonstrates 
+how classical time series methods can produce reliable short-to-medium 
+range forecasts using freely available CDC surveillance data.
+
 ## Research Questions
 1. Can we accurately forecast weekly U.S. ILI activity?
 2. Which model performs better — ARIMA or STL-based ETS/ARIMA?
@@ -62,6 +70,17 @@ ARIMA, STL + ETS, and STL + ARIMA.
 ### Full History with Forecast
 ![Full History Forecast](outputs/09_full_history_forecast.png)
 
+## Limitations
+- Prediction intervals widen substantially beyond 8–12 weeks, 
+  limiting practical use for long-horizon forecasting
+- Models were trained on pre-2024 data and could not anticipate 
+  the historically severe 2024–2025 flu season
+- The COVID-19 structural break (2020–2021) introduces instability 
+  in parameter estimates — future work could explore intervention 
+  models or excluding the COVID period from training
+- ILI % is a proxy measure, it reflects healthcare-seeking behavior 
+  as much as true disease prevalence
+
 ## Repository Structure
 ```
 flu-ili-forecasting/
@@ -97,6 +116,16 @@ install.packages(c("readr", "dplyr", "ggplot2", "forecast",
 ```
 3. Run scripts in order from `01_data_clean.R` to `07_final_forecast.R`
 4. All outputs will be saved automatically to the `outputs/` folder
+
+## Future Work
+- Explore machine learning approaches such as LSTM neural networks 
+  for comparison against classical time series methods
+- Incorporate exogenous variables such as vaccination rates, 
+  temperature, and humidity as predictors
+- Build a regional model disaggregating national ILI into 
+  HHS regions for more targeted public health forecasting
+- Develop an intervention model to explicitly account for the 
+  COVID-19 structural break
 
 ## Author
 **Princess Tagoe**  
