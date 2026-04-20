@@ -127,6 +127,15 @@ install.packages(c("readr", "dplyr", "ggplot2", "forecast",
 - Develop an intervention model to explicitly account for the 
   COVID-19 structural break
 
+## Citation
+
+If you use this code in your research, please cite as:
+Tagoe, P. (2026). ILI Flu Forecasting: STL
+Decomposition and ARIMA-Based Forecasting of US
+Influenza Activity. GitHub repository.
+https://github.com/tagoep/flu-ili-forecasting
+
+
 ## Author
 **Princess Tagoe**  
 MS Applied Data Science — East Tennessee State University  
